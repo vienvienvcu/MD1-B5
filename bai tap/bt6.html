@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- ==========BOX ICON============ -->
+
+       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Tạo slider đơn giản</title>
+</head>
+<body>
+   <div class="slider">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2" >
+    <input type="radio" name="slider" id="slide3" >
+    <input type="radio" name="slider" id="slide4" >
+    <div class="slides">
+        <div class="overflow">
+            <div class="inner">
+                <div class="slide slide-1">
+                    <div class="slide-conten">
+                        <h2>slide1</h2>
+                        <p>content for slide1</p>
+                    </div>
+                </div>
+                <div class="slide slide-2">
+                    <div class="slide-conten">
+                        <h2>slide2</h2>
+                        <p>content for slide2</p>
+                    </div>
+                </div>
+                <div class="slide slide-3">
+                    <div class="slide-conten">
+                        <h2>slide3</h2>
+                        <p>content for slide3</p>
+                    </div>
+                </div>
+                <div class="slide slide-4">
+                    <div class="slide-conten">
+                        <h2>slide4</h2>
+                        <p>content for slide4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="controlright">
+        <!-- co chung id voi input -->
+        <label for="slide1"><i class='bx bx-chevron-right'></i></label>
+        <label for="slide2"><i class='bx bx-chevron-right'></i></label>
+        <label for="slide3"><i class='bx bx-chevron-right'></i></label>
+        <label for="slide4"><i class='bx bx-chevron-right'></i></label>
+    </div>
+    <div class="controlleft">
+        <!-- co chung id voi input -->
+        <label for="slide1"><i class='bx bx-chevron-left'></i></label>
+        <label for="slide2"><i class='bx bx-chevron-left'></i></label>
+        <label for="slide3"><i class='bx bx-chevron-left'></i></label>
+        <label for="slide4"><i class='bx bx-chevron-left'></i></label>
+    </div>
+    <div class="bullets">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+        <label for="slide4"></label>
+    </div>
+   </div>
+
+</body>
+</html>
+<!-- =============STYLE CSS================ -->
+<style>
+  
+  .slider{
+
+    margin: 0 auto;
+    width: 800px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .slider input[type=radio]{
+    display: none;
+  }
+  .slider label{
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .slides{
+    /* background-color: blue; */
+    padding: 30px;
+    border: 3px solid #ccc;
+    position: relative;
+    z-index: 1;
+  }
+  .overflow{
+    /* su dung overflow cho han 1 div luon bao o ngoai cai inner */
+    /* background: green; */
+    width: 100%;
+    overflow: hidden;
+  }
+  #slide1:checked ~ .slides .inner{
+    margin-left: 0;
+
+  }
+  #slide2:checked ~ .slides .inner{
+    margin-left: -100%;
+
+  }
+  #slide3:checked ~ .slides .inner{
+    margin-left: -200%;
+
+  }
+  #slide4:checked ~ .slides .inner{
+    margin-left: -300%;
+
+  }
+  .slides .inner{
+    transition: margin-left 0.8s ease;
+    width: 400%;
+    height: 70vh;
+  }
+  .slides .slide{
+    width: 25%;
+    float: left;
+    display: block;
+    height: 100%;
+    color: #fff;
+  }
+  .slides .slide-1{
+    background: #8E7AB5;
+  }
+  .slides .slide-2{
+    background: #B784B7;
+  }
+  .slides .slide-3{
+    background:  #E493B3;
+  }
+  .slides .slide-4{
+    background: #EEA5A6;
+  }
+  .controlleft .controlright{
+     margin: -130px 0 0 0;
+     width: 100%;
+     height: 50px;
+     z-index: 3;
+     position: relative;
+  }
+  .controlleft label,
+  .controlright label {
+    display: none;
+  }
+  label i{
+   font-size: 80px;
+   transition: opacity 0.2 ease;
+   opacity: 0.5;
+  }
+  label i:hover{
+    opacity: 1;
+
+  }
+  #slide1:checked ~ .controlright label:nth-child(2),
+  #slide2:checked ~ .controlright label:nth-child(3),
+  #slide3:checked ~ .controlright label:nth-child(4),
+  #slide4:checked ~ .controlright label:nth-child(1) {
+    display: block;
+    float: right;
+    margin: -300px -100px 0px 0;
+  }
+  #slide1:checked ~ .controlleft label:nth-last-child(1),
+  #slide2:checked ~ .controlleft label:nth-last-child(4),
+  #slide3:checked ~ .controlleft label:nth-last-child(3),
+  #slide4:checked ~ .controlleft label:nth-last-child(2) {
+    display: block;
+    float: left;
+    margin: -300px 0px 0px -100px ;
+  }
+  .bullets{
+    margin: 100px 0 0;
+    text-align: center;
+  }
+  .bullets label{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #ccc;
+    margin: 0 10px;
+  }
+  #slide1:checked ~ .bullets label:nth-child(1),
+  #slide2:checked ~ .bullets label:nth-child(2),
+  #slide3:checked ~ .bullets label:nth-child(3),
+  #slide4:checked ~ .bullets label:nth-child(4){
+       background: #444;
+  }
+
+</style>

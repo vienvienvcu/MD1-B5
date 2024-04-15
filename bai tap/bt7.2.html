@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ==========ICON flaticon =========== -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <title>tao the Card</title>
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <div class="overflow">
+                <div class="box">
+                    <img src="https://vietourist.com.vn/public/frontend/uploads/files/tour/Cappadocia-du-lich-tho-nhi-ky.jpg">
+                    <div class="icon">
+                        <div class="content">
+                            <i class="fa-solid fa-eye eye"></i>
+                            <p>88.123 view</p>
+                        </div>
+                    </div>
+                    <div class="text"> 
+                        <p>
+                            Quý khách có dịp thưởng ngoạn quang cảnh tuyệt đẹp của buổi bình minh trên  Khinh khí cầu ở độ cao 60m.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    .main{
+        margin-top: 20px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+   .card{
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    margin-left:  30px;
+    box-shadow: 5px 5px 10px rgb(139, 139, 139);
+   }
+   .overflow{
+    width: 100%;
+    overflow: hidden;
+   }
+   .box{
+    position: relative;
+    width: 100%;
+    height:auto;
+    /* padding: 10px; */
+   }
+   img{
+    width: 100%;
+    display: block;
+   }
+   .icon{
+    width: 100%;
+    position: absolute;
+   }
+   .content{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: white;
+    left: 0px;
+    bottom:0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 26px 0;
+   }
+   .eye{
+    font-size: 20px;
+    padding: 0 0 0 16px;
+   }
+   p{
+    margin-left: 10px ;
+    font-size: 18px;
+    text-transform: capitalize;
+   }
+   .text{
+    padding: 16px;
+   } 
+   .text p{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+   }
+</style>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ==========BOX ICON============ -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title> Sử dụng css transform và animations</title>
+</head>
+<body>
+    <input type="checkbox" name=""id="check">
+    <div class="container">
+        <label for="check">
+            <span><i class='bx bx-menu'></i></span>
+            <span><i class='bx bxs-x-square'id=bar ></i></span>
+        </label>
+        <div class="head">menu</div>
+        <nav>
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
+
+<!-- ======STYlE CSS========= -->
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    .container {
+        height: 100%;
+        width: 250px;
+        position: absolute;
+        background: #161616;
+        z-index: 1;
+        transition: 0.5s ease;
+        transform: translateX(-250px);
+    }
+    .container .head{
+        color: #fbfdce;
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 3px;
+        background: linear-gradient(30deg,#df0155,#ed4901);
+    }
+    ul{
+        list-style: none;
+        width: 100%;
+    }
+    ul li{
+        /* k can goi  display: block;  */
+        display: block;
+        width: 100%;
+    }
+    ul li a{
+        /* vi a la the inline nen can phai goi   display: block; 
+        thi moi chinh dc padding va magin  */
+        text-decoration: none;
+        color: #fbfdce;
+        padding: 15px 10px;
+        display: block;
+        font-size: 20px;
+        letter-spacing: 1px;
+        position: relative;
+        transition: 0.3s ease;
+        overflow: hidden;
+    }
+    ul li:hover a{
+        background: #030303;
+        color: #00eaff;
+        letter-spacing: 5px;
+    }
+    input{
+        /* -webkit-appearance: none;
+         */
+         visibility: hidden;
+         display: none;
+
+    }
+    span {
+        position: absolute;
+        right: -40px;
+        top: 30px;
+        font-size: 25px;
+        border-radius: 3px;
+        color: #fff;
+        padding: 3px 8px;
+        background: #030303;
+        cursor: pointer;
+    }
+    #check:checked~ .container{
+        transform: translateX(0);
+    }
+    #check:checked~ .container #bar{
+       display: none;
+    }
+</style>
